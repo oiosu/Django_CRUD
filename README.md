@@ -297,11 +297,11 @@ $ python manage.py showmigrations
 
 ---
 
-![image-20221004180309872](../imges/Django CRUD/image-20221004180309872.png)
+![image](https://user-images.githubusercontent.com/99783474/193912239-92a29903-d69b-46ce-9fe7-454f73a5e562.png)
 
 ---
 
-![image-20221004181330051](../imges/Django CRUD/image-20221004181330051.png)
+![image](https://user-images.githubusercontent.com/99783474/193912267-2d735deb-da5f-4374-a71d-8862273dabd3.png)
 
 > ##### 자연스럽게 게시글 생성이라는 것을 만들고 싶다면 첫번째 사용자에게 HTML 을 주는 기능과 두번째 DB에 저장하는 기능을 생각해 볼 수 있다. 따라서 2개의 URL과 2개의 VIEW 함수가 만들어진다. 
 >
@@ -319,23 +319,21 @@ $ python manage.py showmigrations
 
 ##### (1) URL 
 
-![image-20221004181726580](../imges/Django CRUD/image-20221004181726580.png)
+![image](https://user-images.githubusercontent.com/99783474/193912304-29959561-f52b-4a54-8c40-d428cabb9d2c.png)
 
 ##### (2) view
 
-![image-20221004181900225](../imges/Django CRUD/image-20221004181900225.png)
+![image](https://user-images.githubusercontent.com/99783474/193912330-10396f7a-1c3b-49fd-87ab-e2db9c420fe4.png)
 
 ##### (3) new.html 파일 생성
 
-![image-20221004190929102](../imges/Django CRUD/image-20221004190929102.png)
-
-![image-20221004190856139](../imges/Django CRUD/image-20221004190856139.png)
+![image](https://user-images.githubusercontent.com/99783474/193912369-d7216c09-3c12-4a30-9057-46e429a36ff2.png)
 
 
 
 사용자가 INPUT를 사용할 수 있도록 완성 
 
-#### ![image-20221004193229417](../imges/Django CRUD/image-20221004193229417.png)
+![image](https://user-images.githubusercontent.com/99783474/193912420-08e87d9b-f87c-4795-a14b-7ddf5bd65e68.png)
 
 #### 1-2. 입력받은 데이터 처리 
 
@@ -343,34 +341,33 @@ $ python manage.py showmigrations
 
 > ##### 사용자로부터 값을 받아서 처리하도록 완성 
 
-![image-20221004222043082](../imges/Django CRUD/image-20221004222043082.png)
+![image](https://user-images.githubusercontent.com/99783474/193912479-9082095e-3e4b-4343-98ba-3da4a38720cd.png)
 
 ##### (1) URL 
 
-![image-20221004222400199](../imges/Django CRUD/image-20221004222400199.png)
-
+![image](https://user-images.githubusercontent.com/99783474/193912537-8ecc5296-bd7c-4e1e-9147-374300b1e173.png)
 
 
 ##### (2) view
 
-![image-20221004222555901](../imges/Django CRUD/image-20221004222555901.png)
+![image](https://user-images.githubusercontent.com/99783474/193912569-5596adb7-fc9f-44bd-83b5-3f01a80d5ab1.png)
 
 ```python 
 def create(request):
 	pass
 ```
 
-![image-20221004223240839](../imges/Django CRUD/image-20221004223240839.png)
+![image](https://user-images.githubusercontent.com/99783474/193912616-af1e1d02-5468-4efa-9cd4-7c2f3e572375.png)
 
-![image-20221004223712185](../imges/Django CRUD/image-20221004223712185.png)
+![image](https://user-images.githubusercontent.com/99783474/193912669-d952188d-8a3a-4fea-9e63-08cb8335e820.png)
 
 
 
-![image-20221004223906270](../imges/Django CRUD/image-20221004223906270.png)
+![image](https://user-images.githubusercontent.com/99783474/193912700-165df1ca-fedf-4b58-826c-4c5eda83aa6d.png)
 
 ##### (3) Articles 라는 클래스는 models.py에 있는 모델이다. 
 
-![image-20221004224131054](../imges/Django CRUD/image-20221004224131054.png)
+![image](https://user-images.githubusercontent.com/99783474/193912734-0523e1b1-6e71-4b76-b354-6cc2aa211096.png)
 
 
 
@@ -378,8 +375,7 @@ def create(request):
 
 > ##### redirect import 하기 
 
-![image-20221004224318033](../imges/Django CRUD/image-20221004224318033.png)
-
+![image](https://user-images.githubusercontent.com/99783474/193912761-9e6e995b-5778-421d-a515-d0ba3890e1a1.png)
 
 
 > ##### 다시 index 로 돌아가줘 
@@ -388,17 +384,13 @@ def create(request):
 > return redirect('articles:index')
 > ```
 
-![image-20221004224432346](../imges/Django CRUD/image-20221004224432346.png)
+![image](https://user-images.githubusercontent.com/99783474/193912786-6e3a57a3-605a-4336-a04a-564cc39820de.png)
 
 
 
 ##### (5) 작성 버튼 생성
 
-![image-20221004225656648](../imges/Django CRUD/image-20221004225656648.png)
-
-![image-20221004225728562](../imges/Django CRUD/image-20221004225728562.png)
-
-![2022-10-04 22;58;26](../imges/Django CRUD/2022-10-04 22;58;26.gif)
+![image](https://user-images.githubusercontent.com/99783474/193912844-91c3b128-25a0-451a-a013-7da18ab854bb.png)
 
 ---
 
@@ -412,9 +404,7 @@ def create(request):
 
 #### ⭐ DB에서 게시글을 가져와서, template에 전달 
 
-![image-20221004230355150](../imges/Django CRUD/image-20221004230355150.png)
-
-![image-20221004230556892](../imges/Django CRUD/image-20221004230556892.png)
+![image](https://user-images.githubusercontent.com/99783474/193912889-38e07bbb-d5d4-484b-ba4a-dbedea89d651.png)
 
 
 
@@ -429,12 +419,11 @@ def create(request):
       <hr>
     {% endfor %}
 ```
-
-![image-20221004231102664](../imges/Django CRUD/image-20221004231102664.png)
+![image](https://user-images.githubusercontent.com/99783474/193912975-8dec2514-3c33-416d-8ea9-18ae0ed2157f.png)
 
 ---
 
-![image-20221004231859947](../imges/Django CRUD/image-20221004231859947.png)
+![image](https://user-images.githubusercontent.com/99783474/193913000-703f6562-ecb2-4389-84b0-83cbbe5175c2.png)
 
 ---
 
@@ -442,15 +431,13 @@ def create(request):
 
 #### 2-3. http://localhost:8000/articles/
 
-![image-20221004232013259](../imges/Django CRUD/image-20221004232013259.png)
+![image](https://user-images.githubusercontent.com/99783474/193913038-a9f139e2-cee0-410a-8a47-1fe1d3a94890.png)
 
 
 
 > ##### 🤔 만약 제일 나중에 작성했던 글이 게시판 목록 위로 가져오고 싶다면?  다음과 같이 코드를 작성한다. 
 
-![image-20221004232335293](../imges/Django CRUD/image-20221004232335293.png)
-
-![image-20221004232407674](../imges/Django CRUD/image-20221004232407674.png)
+![image](https://user-images.githubusercontent.com/99783474/193913058-c9a50d1e-ed18-4572-b690-9d2a667b7345.png)
 
 
 
@@ -466,7 +453,7 @@ def create(request):
 
 ##### (4) `Article.objects.order_by('-pk')` 은 쿼리셋 (Article 객체를 가진) 이다. 
 
-![image-20221004233335179](../imges/Django CRUD/image-20221004233335179.png)
+![image](https://user-images.githubusercontent.com/99783474/193913092-181d60f8-d692-4acf-b8c7-cd236f206a28.png)
 
 ---
 
@@ -498,7 +485,7 @@ def create(request):
 >
 > * ##### 추가 후 CSRF 검증에 실패했습니다. 라는 오류가 발생하였다. 
 
-![image-20221005013159116](../imges/Django CRUD/image-20221005013159116.png)
+![image](https://user-images.githubusercontent.com/99783474/193913152-9a32554a-8918-444c-98bd-6f5bb64cfe98.png)
 
 ```
 Help 
@@ -528,19 +515,19 @@ CSRF_FAILURE_VIEW 설정을 사용하여 이 페이지를 사용자 정의 할 �
 
 > * ##### {% csrf_token %} 추가하여 다시 확인해본 결과 다음과 같은 오류 메시지를 확인 할 수 있다. 
 
-![image-20221005014900119](../imges/Django CRUD/image-20221005014900119.png)
+![image](https://user-images.githubusercontent.com/99783474/193913185-29b49074-f15b-4378-8b9f-5fc3baf7b667.png)
 
 
 
 > * ##### POST 로 요청하게 되면 꺼내는 방법이 다르다. 
 
-![image-20221005015051589](../imges/Django CRUD/image-20221005015051589.png)
+![image](https://user-images.githubusercontent.com/99783474/193913219-b746a30a-b35f-4d57-a50c-94af49f01ade.png)
 
 
 
 > * #####  GET 를 POST로 수정해주면 원하는 정보를 GET 할 수 있다. 
 
-![image-20221005015256012](../imges/Django CRUD/image-20221005015256012.png)
+![image](https://user-images.githubusercontent.com/99783474/193913273-69cfe082-166c-47f3-8014-7166ad97a665.png)
 
 
 
@@ -548,9 +535,7 @@ CSRF_FAILURE_VIEW 설정을 사용하여 이 페이지를 사용자 정의 할 �
 >
 > * ##### POST 요청은 주소로서 들어가는 것이 아닌, 요청 메세지에 담겨서 전송이 되기 때문이다. 
 
-![image-20221005015421934](../imges/Django CRUD/image-20221005015421934.png)
-
-![image-20221005015547840](../imges/Django CRUD/image-20221005015547840.png)
+![image](https://user-images.githubusercontent.com/99783474/193913308-d544ab2c-2ca2-4cf3-bc19-03c075b0f792.png)
 
 
 
@@ -558,13 +543,9 @@ CSRF_FAILURE_VIEW 설정을 사용하여 이 페이지를 사용자 정의 할 �
 
 #### [developers.themoviedb](https://developers.themoviedb.org/3/movies/get-movie-reviews)
 
-![image-20221005015943665](../imges/Django CRUD/image-20221005015943665.png)
 
-##### 저장하고 기록하는 행위(로그인) => POST
+![image](https://user-images.githubusercontent.com/99783474/193913344-ce21d8bc-fef6-41be-8f5c-b05d1c528e13.png)
 
-![image-20221005020028456](../imges/Django CRUD/image-20221005020028456.png)
-
-##### 조회 하는 행위(검색하는 창) => GET
 
 
 
@@ -620,7 +601,7 @@ def create(request):
 
 ##### 1. input 태그에 required 추가 
 
-![image-20221005021723575](../imges/Django CRUD/image-20221005021723575.png)
+![image](https://user-images.githubusercontent.com/99783474/193913422-6c3fb9f1-0923-4d59-80e8-7c69238c04d1.png)
 
 
 
@@ -628,10 +609,10 @@ def create(request):
 
 > * ##### artice_form.as_P
 
-![image-20221005023159697](../imges/Django CRUD/image-20221005023159697.png)
+![image](https://user-images.githubusercontent.com/99783474/193913451-4ea7ea8f-5602-4508-ba28-6914bdcaf9f3.png)
 
-##### ![image-20221005024252371](../imges/Django CRUD/image-20221005024252371.png)
 
+![image](https://user-images.githubusercontent.com/99783474/193913483-5fd068c4-c55d-4111-8241-ff6d20a8adec.png)
 
 
 > ##### P 태그로 감싸져 있는 LAVEL, 그리고 INPUT 
@@ -640,15 +621,15 @@ def create(request):
 
 ##### 3.  유효성 검사 
 
-![image-20221005025746084](../imges/Django CRUD/image-20221005025746084.png)
+![image](https://user-images.githubusercontent.com/99783474/193913540-0326202a-be6a-48da-bcd5-236a4ae74f32.png)
 
-![image-20221005025757951](../imges/Django CRUD/image-20221005025757951.png)
+![image](https://user-images.githubusercontent.com/99783474/193913568-14200183-b29f-439d-ac45-1fc3a1cea2ad.png)
 
 
 
 > ##### 구글 로그인 처럼 form 에 추가한 코드와 결과물은 다음과 같다. 
 
-![image-20221005030216806](../imges/Django CRUD/image-20221005030216806.png)
+![image](https://user-images.githubusercontent.com/99783474/193913601-4fc35945-d491-48b8-a737-18a95c591260.png)
 
 
 
@@ -664,7 +645,7 @@ def create(request):
 
 ##### (5) url 에서도 path new 를 없애준다. 
 
-![image-20221005031537650](../imges/Django CRUD/image-20221005031537650.png)
+![image](https://user-images.githubusercontent.com/99783474/193913643-e6173a4f-df5f-432c-bee8-065f7763910c.png)
 
 ##### 5.  코드 수행 구간 
 
@@ -672,11 +653,11 @@ def create(request):
 
 ##### (2) 글쓰기 버튼을 눌렀을 때 
 
-![image-20221005032304464](../imges/Django CRUD/image-20221005032304464.png)
+![image](https://user-images.githubusercontent.com/99783474/193913678-e045998b-7b89-4099-b1bc-1e21a0d4dbf5.png)
 
 ##### (3) invalid 
 
-![image-20221005032242448](../imges/Django CRUD/image-20221005032242448.png)
+![image](https://user-images.githubusercontent.com/99783474/193913708-36f80b49-6c0f-4374-84ed-40b4b6e2d454.png)
 
 
 
