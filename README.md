@@ -679,29 +679,27 @@ def create(request):
 
 ##### 1. URL 
 
-![image-20221005033257734](../imges/Django CRUD/image-20221005033257734.png)
+![image](https://user-images.githubusercontent.com/99783474/193913878-19433239-331c-4ddb-9d11-d43645cc6084.png)
 
 ##### 2. VIEW
-
-![image-20221005033551665](../imges/Django CRUD/image-20221005033551665.png)
+![image](https://user-images.githubusercontent.com/99783474/193913916-9cb27aab-c68b-4f8f-8ad8-f279d67458d3.png)
 
 
 
 ##### 3. detail.html
 
-![image-20221005033818103](../imges/Django CRUD/image-20221005033818103.png)
+![image](https://user-images.githubusercontent.com/99783474/193913945-ee16e365-4ac9-433d-9b21-ace5edaa9033.png)
 
 
 
 ##### 4. URL (index.html)
 
-![image-20221005034033925](../imges/Django CRUD/image-20221005034033925.png)
-
+![image](https://user-images.githubusercontent.com/99783474/193913975-57903eb4-8948-4f87-a885-17b0045af2ea.png)
 
 
 ##### 5. 결과물 확인 
 
-![image-20221005034155001](../imges/Django CRUD/image-20221005034155001.png)
+![image](https://user-images.githubusercontent.com/99783474/193913995-cb92d52a-56ba-4a55-a7ec-0e60e8c40de1.png)
 
 
 
@@ -735,7 +733,7 @@ def create(request):
 
 ##### 1. URL
 
-![image-20221005034821847](../imges/Django CRUD/image-20221005034821847.png)
+![image](https://user-images.githubusercontent.com/99783474/193914186-0374224e-d428-4fa5-b4b0-404209d0cbfe.png)
 
 
 
@@ -743,13 +741,13 @@ def create(request):
 
 > articles 오타 
 
-![image-20221005035034049](../imges/Django CRUD/image-20221005035034049.png)
+![image](https://user-images.githubusercontent.com/99783474/193914236-8e85ee9d-7c46-4903-97b5-4db205253b7e.png)
 
 
 
 ##### 3. view
 
-![image-20221005035623893](../imges/Django CRUD/image-20221005035623893.png)
+![image](https://user-images.githubusercontent.com/99783474/193914268-cfd92edb-0dbb-40c8-b5fa-3331dc479792.png)
 
 ##### 4. update.html
 
@@ -759,17 +757,15 @@ def create(request):
 
 ##### ⭐ action : method (어떤 방식으로)
 
-![image-20221005040213494](../imges/Django CRUD/image-20221005040213494.png)
+![image](https://user-images.githubusercontent.com/99783474/193914296-b8bd4072-8757-453f-9603-a653b6dda5c5.png)
 
 ##### 5. 글을 수정하기 위해 원래 있던 글이 남아있게 하려면? 
 
-![image-20221005040516317](../imges/Django CRUD/image-20221005040516317.png)
+![image](https://user-images.githubusercontent.com/99783474/193914319-54e408f6-ecd3-40cf-aeb5-071fcf32a21e.png)
 
 ##### 6. Forbidden 오류 발생 
 
-![image-20221005040655232](../imges/Django CRUD/image-20221005040655232.png)
-
-![image-20221005040805122](../imges/Django CRUD/image-20221005040805122.png)
+![image](https://user-images.githubusercontent.com/99783474/193914357-80f3a4a4-dc1d-45d6-a0a6-2d17adc8f14f.png)
 
 > ##### csrf token  작성하기 
 
@@ -781,11 +777,11 @@ def create(request):
 
 ##### 1. POST : input 값 가져와서, 검증하고, DB 에 저장
 
-![image-20221005041940387](../imges/Django CRUD/image-20221005041940387.png)
+![image](https://user-images.githubusercontent.com/99783474/193914389-7206dad3-a52b-486a-819a-3b8fe935dbb5.png)
 
 ##### 2.  update VS create
 
-![image-20221005042045306](../imges/Django CRUD/image-20221005042045306.png)
+![image](https://user-images.githubusercontent.com/99783474/193914425-6676bd16-6b9a-4dc6-aef7-42225ec9b953.png)
 
 
 
@@ -795,9 +791,9 @@ def create(request):
 
 ### 최종 정리 
 
-![image-20221005042820956](../imges/Django CRUD/image-20221005042820956.png)
+![image](https://user-images.githubusercontent.com/99783474/193914453-2f5ad025-5b7e-47b8-9233-8c103fd8ff2c.png)
 
-![image-20221005043101761](../imges/Django CRUD/image-20221005043101761.png)
+![image](https://user-images.githubusercontent.com/99783474/193914478-f42294fd-e3ba-470f-9130-98c3855e8927.png)
 
 #### 1. GET 요청일 때 처리 흐름
 
@@ -806,3 +802,5 @@ def create(request):
 #### 3. VALID 할 때 
 
 #### 4. INVALID 할때 
+
+
