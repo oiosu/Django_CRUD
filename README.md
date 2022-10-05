@@ -1,4 +1,7 @@
-# Django CRUD 
+
+
+
+# 💡 Django CRUD 
 
 ![image](https://user-images.githubusercontent.com/99783474/193910840-ec5db066-0cb1-44de-b210-e962da6c9e93.png)
 
@@ -7,12 +10,7 @@
 ---
 
 
-
-### <span style='background-color:#fff5b1'>   🐣 CRUD   </span>
-
-
-
-##### 1) 가상환경 설치하기 
+#### 1) 가상환경 설치하기 
 
 > ##### 가상환경 설치를 왜 하는 걸까?  => 패키지를 별도로 가져가기 위해 설치한다. 
 
@@ -28,9 +26,10 @@ $ source venv/Scripts/activate
 (venv)
 ```
 
+---
 
 
-##### 2) Django 설치 
+#### 2) Django 설치 
 
 ```bash
 $ pip install django==3.2.13
@@ -38,9 +37,11 @@ $ pip install django==3.2.13
 
 ![image](https://user-images.githubusercontent.com/99783474/193911032-3ad9fcb1-aed5-485f-9117-a2171df119ee.png)
 
+---
 
 
-##### 3) requirements.txt
+
+#### 3) requirements.txt
 
 > pyton 에서는 패키지 의존성을 공유할 떄 가장 범용적으로 사용되는 것이 requrements.txt 이다. 현재 파이썬 환경에서 설치된 패키지들을 정리할땐 아래의 명령어를 입력한다. 
 >
@@ -57,8 +58,11 @@ $ pip install django==3.2.13
 > ![image](https://user-images.githubusercontent.com/99783474/193911078-ce3d207e-db14-4b17-bc3b-ad38767aa0b7.png)
 
 
+---
 
-##### 4) 프로젝트 생성
+
+
+#### 4) 프로젝트 생성
 
 ```bash
 $  django-admin startproject pjt . 
@@ -84,7 +88,7 @@ $ python manage.py runserver
 
 
 
-##### 5) **Articles** app **생성**
+#### 5) **Articles** app **생성**
 
 ```bash
 $ python manage.py startapp articles
@@ -112,13 +116,13 @@ Including another URLconf
     2. urlpatterns에 URL 추가 : path('blog/', include('blog.urls'))
 ```
 
-![image](https://user-images.githubusercontent.com/99783474/193911362-e771be78-0efd-40f0-ac4a-df934b321f97.png)
+
 
 ---
 
 
 
-##### 5) pjt > urls.py 
+#### 5) pjt > urls.py 
 
 > * ##### include를 하는 이유는  url 설정을 app단위로 하기 위해서 진행한다. 
 
@@ -135,7 +139,7 @@ urlpatterns = [
 
 
 
-##### 6) articles > urls.py 생성
+#### 6) articles > urls.py 생성
 
 ```python
 URL 설정을 app 단위로 했들 때 반드시 들어가야 하는 것
@@ -162,7 +166,7 @@ urlpatterns = []
 
 ---
 
-* #### 흐름 이해하기 
+ * #### 흐름 이해하기 
 
 ![image](https://user-images.githubusercontent.com/99783474/193911449-cd087cf0-d49d-4161-b1b4-880f6a93d48e.png)
 
@@ -184,7 +188,7 @@ urlpatterns = []
 
 
 
-##### 6) articles > views.py 함수 정의 
+#### 6) articles > views.py 함수 정의 
 
 * ##### views 파일 구성 
 
@@ -199,8 +203,7 @@ def index(request):
 ```
 
 
-
-##### 7) Template 생성
+#### 7) Template 생성
 
 ![image](https://user-images.githubusercontent.com/99783474/193911617-6e6fe526-d4a7-41a2-8712-0b7d10bef294.png)
 > ##### index.html
@@ -233,9 +236,9 @@ def index(request):
 
 ---
 
-> ##### 어떤 모형? 시스템 기반의 모형 
+> #### 어떤 모형? 시스템 기반의 모형 
 
-> ##### UI(기능) 에 따라서 DB가 결정된다. 즉, UI와 DB는 밀접한 관계를 가질 수 밖에 없다. 
+> #### UI(기능) 에 따라서 DB가 결정된다. 즉, UI와 DB는 밀접한 관계를 가질 수 밖에 없다. 
 
 ![image](https://user-images.githubusercontent.com/99783474/193911837-deb9a5bd-8c3b-4a68-a428-63847cb5f804.png)
 
@@ -244,13 +247,13 @@ def index(request):
 
 
 
-##### (1) 클래스 정의 
+#### (1) 클래스 정의 
 
 ![image](https://user-images.githubusercontent.com/99783474/193911878-09ccfa3b-b8c1-486d-bb46-9711f01c82ae.png)
 
 
 
-##### (2) 마이그레이션 파일 생성
+#### (2) 마이그레이션 파일 생성
 
 ```bash
 $ python manage.py makemigrations
@@ -260,7 +263,7 @@ $ python manage.py makemigrations
 
 
 
-##### (3) DB 반영
+#### (3) DB 반영
 
 ```BASH
 $ python manage.py migrate
