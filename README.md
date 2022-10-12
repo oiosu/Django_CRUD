@@ -8,11 +8,11 @@
 
 
 ---
+<details>
+<summary> 1) 가상환경 설치하기 </summary>
+<div markdown="1">
 
-
-#### 1) 가상환경 설치하기 
-
-> ##### 가상환경 설치를 왜 하는 걸까?  => 패키지를 별도로 가져가기 위해 설치한다. 
+> **가상환경 설치를 왜 하는 걸까?  => 패키지를 별도로 가져가기 위해 설치한다.**
 
 ```bash
 $ python -m venv venv
@@ -26,10 +26,16 @@ $ source venv/Scripts/activate
 (venv)
 ```
 
+</div>
+</details>
+
+
 ---
 
 
-#### 2) Django 설치 
+<details>
+<summary> 2) Django 설치 </summary>
+<div markdown="1">
 
 ```bash
 $ pip install django==3.2.13
@@ -58,11 +64,14 @@ $ pip install django==3.2.13
 > ![image](https://user-images.githubusercontent.com/99783474/193911078-ce3d207e-db14-4b17-bc3b-ad38767aa0b7.png)
 
 
+</div>
+</details>
+
 ---
 
-
-
-#### 4) 프로젝트 생성
+<details>
+<summary> 4) 프로젝트 생성 </summary>
+<div markdown="1">
 
 ```bash
 $  django-admin startproject pjt . 
@@ -86,9 +95,14 @@ $ python manage.py runserver
 >
 > ![image](https://user-images.githubusercontent.com/99783474/193911266-9148f749-586d-4a44-becd-6a92e0bbe831.png)
 
+</div>
+</details>
 
+---
 
-#### 5) **Articles** app **생성**
+<details>
+<summary> 5) Articles app 생성</summary>
+<div markdown="1">
 
 ```bash
 $ python manage.py startapp articles
@@ -116,13 +130,7 @@ Including another URLconf
     2. urlpatterns에 URL 추가 : path('blog/', include('blog.urls'))
 ```
 
-
-
----
-
-
-
-#### 5) pjt > urls.py 
+#### 💡 pjt > urls.py 
 
 > * ##### include를 하는 이유는  url 설정을 app단위로 하기 위해서 진행한다. 
 
@@ -139,7 +147,7 @@ urlpatterns = [
 
 
 
-#### 6) articles > urls.py 생성
+#### 💡 articles > urls.py 생성
 
 ```python
 URL 설정을 app 단위로 했들 때 반드시 들어가야 하는 것
@@ -163,17 +171,6 @@ urlpatterns = []
 ```
 
 
-
----
-
- * #### 흐름 이해하기 
-
-![image](https://user-images.githubusercontent.com/99783474/193911449-cd087cf0-d49d-4161-b1b4-880f6a93d48e.png)
-
----
-
-
-
 ![image](https://user-images.githubusercontent.com/99783474/193911490-e2271042-047f-4897-b367-3a6e3f312690.png)
 
 
@@ -187,10 +184,23 @@ urlpatterns = []
 > * ##### AttributeError : module 'articles.views' has no attribute 'index'
 
 
+</div>
+</details>
 
-#### 6) articles > views.py 함수 정의 
 
-* ##### views 파일 구성 
+---
+
+ * #### 흐름 이해하기 
+
+![image](https://user-images.githubusercontent.com/99783474/193911449-cd087cf0-d49d-4161-b1b4-880f6a93d48e.png)
+
+---
+
+<details>
+<summary> 6) articles > views.py 함수 정의 </summary>
+
+
+<div markdown="1">
 
 ![image](https://user-images.githubusercontent.com/99783474/193911534-a063ba57-16b0-4a68-a274-ca1a426120bb.png)
 
@@ -199,11 +209,21 @@ from django.shortcuts import render
 
 # Create your views here.
 def index(request):
-    return render(request, "articles/index.html")
+    return render(request, "articles/index.html") 
 ```
 
+</div>
+</details>
 
-#### 7) Template 생성
+---
+
+
+<details>
+<summary>7) Template 생성</summary>
+
+
+<div markdown="1">
+
 
 ![image](https://user-images.githubusercontent.com/99783474/193911617-6e6fe526-d4a7-41a2-8712-0b7d10bef294.png)
 > ##### index.html
@@ -212,23 +232,33 @@ def index(request):
 
 
 
+</div>
+</details>
+
 ---
 
-* #### 다시 흐름잡기 
+* ### 다시 흐름잡기 
+
+<details>
+<summary>흐름 정리</summary>
+<div markdown="1">
+
 
 ![image](https://user-images.githubusercontent.com/99783474/193911685-d9a49569-4315-4f47-9857-64c4ad193210.png)
 
 ![image](https://user-images.githubusercontent.com/99783474/193911748-5d8968c2-2256-4af5-ab1c-a280bbce8cba.png)
 
+</div>
+</details>
+
 ---
 
 
+## <span style='background-color:#fff5b1'> 🐤 CRUD   </span>
 
-### <span style='background-color:#fff5b1'>   🐤 CRUD   </span>
-
-
-
-#### 1. 모델(모형) 정의하기 (DB 스키마 설계)
+<details>
+<summary> 1. 모델(모형) 정의하기 (DB 스키마 설계) </summary>
+<div markdown="1">
 
 ---
 
@@ -236,9 +266,9 @@ def index(request):
 
 ---
 
-> #### 어떤 모형? 시스템 기반의 모형 
+> ### 어떤 모형? 시스템 기반의 모형 
 
-> #### UI(기능) 에 따라서 DB가 결정된다. 즉, UI와 DB는 밀접한 관계를 가질 수 밖에 없다. 
+> ### UI(기능) 에 따라서 DB가 결정된다. 즉, UI와 DB는 밀접한 관계를 가질 수 밖에 없다. 
 
 ![image](https://user-images.githubusercontent.com/99783474/193911837-deb9a5bd-8c3b-4a68-a428-63847cb5f804.png)
 
@@ -247,13 +277,13 @@ def index(request):
 
 
 
-#### (1) 클래스 정의 
+## (1) 클래스 정의 
 
 ![image](https://user-images.githubusercontent.com/99783474/193911878-09ccfa3b-b8c1-486d-bb46-9711f01c82ae.png)
 
 
 
-#### (2) 마이그레이션 파일 생성
+## (2) 마이그레이션 파일 생성
 
 ```bash
 $ python manage.py makemigrations
@@ -263,7 +293,7 @@ $ python manage.py makemigrations
 
 
 
-#### (3) DB 반영
+## (3) DB 반영
 
 ```BASH
 $ python manage.py migrate
@@ -273,7 +303,7 @@ $ python manage.py migrate
 
 
 
-##### (4) DB 반영 확인하기 
+### (4) DB 반영 확인하기 
 
 ```bash
 $ python manage.py showmigrations
@@ -281,16 +311,18 @@ $ python manage.py showmigrations
 ![image](https://user-images.githubusercontent.com/99783474/193912001-852140aa-08bc-493b-9392-7fb063846eb8.png)
 
 
-
-
-
-### <span style='background-color:#fff5b1'>    🐥 CRUD 기능 구현 _ 01. 생성      </span>
-
-
-
-### 1. 게시글 생성 
+</div>
+</details>
 
 ---
+
+
+### <span style='background-color:#fff5b1'>1. CRUD 기능 구현 </span>
+
+
+<details>
+<summary>1. 게시글 생성 </summary>
+<div markdown="1">
 
 #### ⭐ 내가 어떠한 기능을 만들고 싶다면,
 
@@ -395,13 +427,15 @@ def create(request):
 
 ![image](https://user-images.githubusercontent.com/99783474/193912844-91c3b128-25a0-451a-a013-7da18ab854bb.png)
 
+</div>
+</details>
+
 ---
 
 
-
-### 2. 게시글 목록 기능 구현 
-
-
+<details>
+<summary> 2. 게시글 목록 기능 구현</summary>
+<div markdown="1">
 
 #### 2-1. HTML Form 제공
 
@@ -458,15 +492,20 @@ def create(request):
 
 ![image](https://user-images.githubusercontent.com/99783474/193913092-181d60f8-d692-4acf-b8c7-cd236f206a28.png)
 
+</div>
+</details>
+ 
+
 ---
 
 
+### <span style='background-color:#fff5b1'>!!! GET, POST </span>
 
-### <span style='background-color:#fff5b1'>   🐤 GET, POST </span>
+<details>
+<summary>GET & POST</summary>
+<div markdown="1">
 
-
-
-##### ◼ GET  
+#### ◼ GET  
 
 > ##### The `GET` method requests a representation of the specified resource(Article). Requests using `GET` should only retrieve data. (  Article을 조회한다.  )
 >
@@ -474,7 +513,7 @@ def create(request):
 
 
 
-##### ◼ POST
+#### ◼ POST
 
 > #####  The `POST` method submits an entity to the specifited resource (Article), often causing a change in state or side effects on the server.
 >
@@ -482,7 +521,7 @@ def create(request):
 
 
 
-#### 1-1. CSRF
+### 1-1. CSRF
 
 > * ##### method="POST" 를 추가한 후 글쓰기를 통해 글을 추가하였다. 
 >
@@ -514,7 +553,7 @@ CSRF_FAILURE_VIEW 설정을 사용하여 이 페이지를 사용자 정의 할 �
 
 
 
-#### 1-2.  {% csrf_token %} 
+### 1-2.  {% csrf_token %} 
 
 > * ##### {% csrf_token %} 추가하여 다시 확인해본 결과 다음과 같은 오류 메시지를 확인 할 수 있다. 
 
@@ -522,27 +561,27 @@ CSRF_FAILURE_VIEW 설정을 사용하여 이 페이지를 사용자 정의 할 �
 
 
 
-> * ##### POST 로 요청하게 되면 꺼내는 방법이 다르다. 
+> * #### POST 로 요청하게 되면 꺼내는 방법이 다르다. 
 
 ![image](https://user-images.githubusercontent.com/99783474/193913219-b746a30a-b35f-4d57-a50c-94af49f01ade.png)
 
 
 
-> * #####  GET 를 POST로 수정해주면 원하는 정보를 GET 할 수 있다. 
+> * ####  GET 를 POST로 수정해주면 원하는 정보를 GET 할 수 있다. 
 
 ![image](https://user-images.githubusercontent.com/99783474/193913273-69cfe082-166c-47f3-8014-7166ad97a665.png)
 
 
 
-> * ##### 아주 큰 변화 : HTTP 주소가 바뀌지 않는다. 
+> * #### 아주 큰 변화 : HTTP 주소가 바뀌지 않는다. 
 >
-> * ##### POST 요청은 주소로서 들어가는 것이 아닌, 요청 메세지에 담겨서 전송이 되기 때문이다. 
+> * #### POST 요청은 주소로서 들어가는 것이 아닌, 요청 메세지에 담겨서 전송이 되기 때문이다. 
 
 ![image](https://user-images.githubusercontent.com/99783474/193913308-d544ab2c-2ca2-4cf3-bc19-03c075b0f792.png)
 
 
 
-#### 1-3. URL 평점
+### 1-3. URL 평점
 
 #### [developers.themoviedb](https://developers.themoviedb.org/3/movies/get-movie-reviews)
 
@@ -568,22 +607,22 @@ CSRF_FAILURE_VIEW 설정을 사용하여 이 페이지를 사용자 정의 할 �
 
 ---
 
-#### 1-4. 흐름 정리 
+### 1-4. 흐름 정리 
 
-##### (1) METHOD를 POST로 정의하기 
+#### (1) METHOD를 POST로 정의하기 
 
 ```HTML
 <form action="{% url 'articles:create' %}" method="POST">
 ```
 
-##### (2) {% csrf_token %} 반드시 작성하기 
+#### (2) {% csrf_token %} 반드시 작성하기 
 
 ```HTML
 <form action="{% url 'articles:create' %}" method="POST">
 {% csrf_token %} 
 ```
 
-##### (3) 값을 받을 때 POST request로 작성하기 
+#### (3) 값을 받을 때 POST request로 작성하기 
 
 ```python
 def create(request):
@@ -594,21 +633,29 @@ def create(request):
     return redirect("articles:index")
 ```
 
+</div>
+</details>
+
+
+
 ---
 
 
 
-### <span style='background-color:#fff5b1'>   🐤 Django ModelForm </span>
+### <span style='background-color:#fff5b1'> 2. Django ModelForm </span>
 
 
+<details>
+<summary>MODELFORM</summary>
+<div markdown="1">
 
-##### 1. input 태그에 required 추가 
+#### 1. input 태그에 required 추가 
 
 ![image](https://user-images.githubusercontent.com/99783474/193913422-6c3fb9f1-0923-4d59-80e8-7c69238c04d1.png)
 
 
 
-##### 2.  forms.py
+#### 2.  forms.py
 
 > * ##### artice_form.as_P
 
@@ -622,7 +669,7 @@ def create(request):
 
 
 
-##### 3.  유효성 검사 
+#### 3.  유효성 검사 
 
 ![image](https://user-images.githubusercontent.com/99783474/193913540-0326202a-be6a-48da-bcd5-236a4ae74f32.png)
 
@@ -630,45 +677,47 @@ def create(request):
 
 
 
-> ##### 구글 로그인 처럼 form 에 추가한 코드와 결과물은 다음과 같다. 
+> #### 구글 로그인 처럼 form 에 추가한 코드와 결과물은 다음과 같다. 
 
 ![image](https://user-images.githubusercontent.com/99783474/193913601-4fc35945-d491-48b8-a737-18a95c591260.png)
 
 
 
-##### 4. 코드 합치기  
+#### 4. 코드 합치기  
 
-##### (1) new를 없애고, create 같은 url 에서 처리한다. 
+#### (1) new를 없애고, create 같은 url 에서 처리한다. 
 
-##### (2) 만약, request.method == 'POST' 라면 DB에 저장을 한다. 
+#### (2) 만약, request.method == 'POST' 라면 DB에 저장을 한다. 
 
-##### (3) 그게 아니라면, ariticle_form = ArticleForm()
+#### (3) 그게 아니라면, ariticle_form = ArticleForm()
 
-##### (4) 코드를 하나로 합쳤다면, index.html {% url 'articles:create' %} 라고 변경해준다. 
+#### (4) 코드를 하나로 합쳤다면, index.html {% url 'articles:create' %} 라고 변경해준다. 
 
-##### (5) url 에서도 path new 를 없애준다. 
+#### (5) url 에서도 path new 를 없애준다. 
 
 ![image](https://user-images.githubusercontent.com/99783474/193913643-e6173a4f-df5f-432c-bee8-065f7763910c.png)
 
-##### 5.  코드 수행 구간 
+#### 5.  코드 수행 구간 
 
-##### (1) create 실행했을 때
+#### (1) create 실행했을 때
 
-##### (2) 글쓰기 버튼을 눌렀을 때 
+#### (2) 글쓰기 버튼을 눌렀을 때 
 
 ![image](https://user-images.githubusercontent.com/99783474/193913678-e045998b-7b89-4099-b1bc-1e21a0d4dbf5.png)
 
-##### (3) invalid 
+#### (3) invalid 
 
 ![image](https://user-images.githubusercontent.com/99783474/193913708-36f80b49-6c0f-4374-84ed-40b4b6e2d454.png)
 
+
+</div>
+</details>
 
 
 ---
 
 
-
-### <span style='background-color:#fff5b1'>   🐤 상세 보기   </span>
+### <span style='background-color:#fff5b1'> 3. 상세 보기   </span>
 
 > ##### 특정한 글을 본다. 
 
@@ -678,49 +727,64 @@ def create(request):
 
 #### ⭐ 특정한 글을 본다? 즉, DB에 있는 아이디 값을 URL에 넣어줘야한다. 
 
+<details>
+<summary>DETAIL</summary>
+<div markdown="1">
 
-
-##### 1. URL 
+#### 1. URL 
 
 ![image](https://user-images.githubusercontent.com/99783474/193913878-19433239-331c-4ddb-9d11-d43645cc6084.png)
 
-##### 2. VIEW
+#### 2. VIEW
 ![image](https://user-images.githubusercontent.com/99783474/193913916-9cb27aab-c68b-4f8f-8ad8-f279d67458d3.png)
 
 
 
-##### 3. detail.html
+#### 3. detail.html
 
 ![image](https://user-images.githubusercontent.com/99783474/193913945-ee16e365-4ac9-433d-9b21-ace5edaa9033.png)
 
 
 
-##### 4. URL (index.html)
+#### 4. URL (index.html)
 
 ![image](https://user-images.githubusercontent.com/99783474/193913975-57903eb4-8948-4f87-a885-17b0045af2ea.png)
 
 
-##### 5. 결과물 확인 
+#### 5. 결과물 확인 
 
 ![image](https://user-images.githubusercontent.com/99783474/193913995-cb92d52a-56ba-4a55-a7ec-0e60e8c40de1.png)
 
+
+</div>
+</details>
 
 
 ---
 
 
 
-### <span style='background-color:#fff5b1'>   🐤 삭제하기 </span>
+### <span style='background-color:#fff5b1'>4. 삭제하기 </span>
+
+<details>
+<summary>DELETE</summary>
+<div markdown="1">
 
 > #####  . http://localhost:8000/articles/<int:pk>/delete/
 
 > ##### 특정한 글을 삭제한다. 
 
+</div>
+</details>
+
 ---
 
 
+### <span style='background-color:#fff5b1'> 5. 수정하기 </span>
 
-### <span style='background-color:#fff5b1'>   🐤 수정하기 </span>
+<details>
+<summary>EDIT</summary>
+<div markdown="1">
 
 > ##### 특정한 글을 수정한다 라는 건 사용자에게 수정된 글을 받아서 특정한 글을 수정한다. 
 
@@ -730,17 +794,17 @@ def create(request):
 
 
 
-#### ✔ 사용자에게 수정할 수 있는 양식을 제공하고 (GET)
+### ✔ 사용자에게 수정할 수 있는 양식을 제공하고 (GET)
 
 
 
-##### 1. URL
+#### 1. URL
 
 ![image](https://user-images.githubusercontent.com/99783474/193914186-0374224e-d428-4fa5-b4b0-404209d0cbfe.png)
 
 
 
-##### 2.  수정하기 버튼 생성 (detail.index)
+#### 2.  수정하기 버튼 생성 (detail.index)
 
 > articles 오타 
 
@@ -748,11 +812,11 @@ def create(request):
 
 
 
-##### 3. view
+#### 3. view
 
 ![image](https://user-images.githubusercontent.com/99783474/193914268-cfd92edb-0dbb-40c8-b5fa-3331dc479792.png)
 
-##### 4. update.html
+#### 4. update.html
 
 #### ⭐ form 에서 중요한 2가지 요소 
 
@@ -762,11 +826,11 @@ def create(request):
 
 ![image](https://user-images.githubusercontent.com/99783474/193914296-b8bd4072-8757-453f-9603-a653b6dda5c5.png)
 
-##### 5. 글을 수정하기 위해 원래 있던 글이 남아있게 하려면? 
+#### 5. 글을 수정하기 위해 원래 있던 글이 남아있게 하려면? 
 
 ![image](https://user-images.githubusercontent.com/99783474/193914319-54e408f6-ecd3-40cf-aeb5-071fcf32a21e.png)
 
-##### 6. Forbidden 오류 발생 
+#### 6. Forbidden 오류 발생 
 
 ![image](https://user-images.githubusercontent.com/99783474/193914357-80f3a4a4-dc1d-45d6-a0a6-2d17adc8f14f.png)
 
@@ -774,25 +838,30 @@ def create(request):
 
 
 
-#### ✔ 특정한 글을 수정한다. (POST)
+### ✔ 특정한 글을 수정한다. (POST)
 
 
 
-##### 1. POST : input 값 가져와서, 검증하고, DB 에 저장
+#### 1. POST : input 값 가져와서, 검증하고, DB 에 저장
 
 ![image](https://user-images.githubusercontent.com/99783474/193914389-7206dad3-a52b-486a-819a-3b8fe935dbb5.png)
 
-##### 2.  update VS create
+#### 2.  update VS create
 
 ![image](https://user-images.githubusercontent.com/99783474/193914425-6676bd16-6b9a-4dc6-aef7-42225ec9b953.png)
 
+</div>
+</details>
 
 
 ---
 
 
+### 🌱 최종 정리 
 
-### 최종 정리 
+<details>
+<summary>흐름 정리</summary>
+<div markdown="1">
 
 ![image](https://user-images.githubusercontent.com/99783474/193914453-2f5ad025-5b7e-47b8-9233-8c103fd8ff2c.png)
 
@@ -805,5 +874,14 @@ def create(request):
 #### 3. VALID 할 때 
 
 #### 4. INVALID 할때 
+
+</div>
+</details>
+
+---
+---
+
+
+
 
 
