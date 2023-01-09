@@ -1,7 +1,7 @@
 
 
 
-# 💡 Django CRUD 
+# 💡 Django CRUD (흐름정리)
 
 ![image](https://user-images.githubusercontent.com/99783474/193910840-ec5db066-0cb1-44de-b210-e962da6c9e93.png)
 
