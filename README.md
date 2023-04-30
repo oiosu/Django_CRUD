@@ -37,6 +37,15 @@ $ source venv/Scripts/activate
 <summary> 2) Django 설치 </summary>
 <div markdown="1">
 
+---
+
+* 업데이트 
+```bash
+$ python.exe -m pip install --upgrade pip
+```
+
+---
+
 ```bash
 $ pip install django==3.2.13
 ```
