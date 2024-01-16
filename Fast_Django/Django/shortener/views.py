@@ -5,6 +5,10 @@ from .models import User
 from .forms import RegisterForm, AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render
+from django.core.paginator import Paginator
+from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+
 
 
 def index(request):
@@ -71,3 +75,13 @@ def login_view(request):
 def logout_view(request):
     logout(request)  
     return redirect("index")
+
+# @login_required 로그인 부여 
+@login_required
+def list_view(request):
+    page = int(request.GET.get("p", 1))
+    # -id => 내림차순 / id => 오름차순 
+    users = User.objects.all().order_by("-id")  
+    paginator = Paginator(users, 1)
+    users = paginator.get_page(page)
+    return render(request, "borders.html", {"users": users})

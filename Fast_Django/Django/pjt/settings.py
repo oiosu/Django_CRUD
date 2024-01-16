@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "debug_toolbar",
+    "django_seed",
 ]
 
 # IP로 접속했을때만 django debug toolbar 가 작동하기
@@ -118,7 +119,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ko-us'
 
-TIME_ZONE = 'Seoul'
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
