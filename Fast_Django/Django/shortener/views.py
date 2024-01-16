@@ -2,9 +2,10 @@ from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from .models import User
-from .forms import RegisterForm
-from django.contrib.auth import authenticate, login
+from .forms import RegisterForm, AuthenticationForm
+from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render
+
 
 def index(request):
     user = User.objects.filter(id=request.user.id).first()
@@ -30,6 +31,7 @@ def get_user(request, user_id):
             user = User.objects.filter(pk=user_id).update(username=username)
             return JsonResponse({"msg": "you just reached with post method!"})
 
+# 회원가입
 def register(request):
     if request.method == "POST":
         form = RegisterForm(request.POST)
@@ -46,5 +48,26 @@ def register(request):
         form = RegisterForm()
         return render(request, "register.html", {"form": form})
     
-def server_error(request, *args, **kwargs):
-    return render(request, '500.html', status=500)
+
+# 로그인
+def login_view(request):
+    if request.method == "POST":
+        form = AuthenticationForm(request, request.POST)  
+        msg = "가입되어 있지 않거나 로그인 정보가 잘못되었습니다"
+        print(form.is_valid)  
+        if form.is_valid():
+            username = form.cleaned_data.get("username")
+            raw_password = form.cleaned_data.get("password")
+            user = authenticate(username=username, password=raw_password)
+            if user is not None: 
+                msg = "로그인 성공"
+                login(request, user)
+        return render(request, "login.html", {"form": form, "msg": msg})
+    else:
+        form = AuthenticationForm()  
+        return render(request, "login.html", {"form": form})
+
+# 로그아웃
+def logout_view(request):
+    logout(request)  
+    return redirect("index")
