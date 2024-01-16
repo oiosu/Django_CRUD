@@ -4,10 +4,12 @@ from django.views.decorators.csrf import csrf_exempt
 from .models import User
 
 def index(request):
-    user = User.objects.filter(username="admin").first()
+    user = User.objects.filter(id=request.user.id).first()
     email = user.email if user else "Anonymous User!"
-    print(email)
-    print(request.user.is_authenticated)
+    print("Logged in?", request.user.is_authenticated)
+    if request.user.is_authenticated is False:
+        email = "Anonymous User!"
+    print()
     return render(request, "base.html", {"welcome_msg": f"hello {email}", "hello": "world"})
 
 @csrf_exempt
