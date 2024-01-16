@@ -4,24 +4,19 @@ from django.views.decorators.csrf import csrf_exempt
 from .models import User
 from .forms import RegisterForm, AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
-from django.shortcuts import render
 from django.core.paginator import Paginator
-from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-
-
 
 def index(request):
     user = User.objects.filter(id=request.user.id).first()
     email = user.email if user else "Anonymous User!"
     print("Logged in?", request.user.is_authenticated)
-    if request.user.is_authenticated is False:
+    if not request.user.is_authenticated:
         email = "Anonymous User!"
     print()
     return render(request, "base.html", {"welcome_msg": f"hello {email}", "hello": "world"})
 
 @csrf_exempt
-# user_id는 urls.py에서 가져오는 값이다.
 def get_user(request, user_id):
     print(user_id)
     if request.method == "GET":
@@ -35,15 +30,14 @@ def get_user(request, user_id):
             user = User.objects.filter(pk=user_id).update(username=username)
             return JsonResponse({"msg": "you just reached with post method!"})
 
-# 회원가입
 def register(request):
     if request.method == "POST":
         form = RegisterForm(request.POST)
         msg = "올바르지 않은 데이터 입니다."
         if form.is_valid():
             form.save()
-            username = form.cleaned_date.get("username")
-            raw_password = form.cleaned_date.get("password")
+            username = form.cleaned_data.get("username")  # 수정된 부분
+            raw_password = form.cleaned_data.get("password")  # 수정된 부분
             user = authenticate(username=username, password=raw_password)
             login(request, user)
             msg = "회원가입완료"
@@ -51,37 +45,36 @@ def register(request):
     else:
         form = RegisterForm()
         return render(request, "register.html", {"form": form})
-    
 
-# 로그인
 def login_view(request):
+    msg = None
+    is_ok = False
     if request.method == "POST":
-        form = AuthenticationForm(request, request.POST)  
-        msg = "가입되어 있지 않거나 로그인 정보가 잘못되었습니다"
-        print(form.is_valid)  
+        form = AuthenticationForm(request, request.POST)
         if form.is_valid():
             username = form.cleaned_data.get("username")
             raw_password = form.cleaned_data.get("password")
             user = authenticate(username=username, password=raw_password)
-            if user is not None: 
-                msg = "로그인 성공"
+            if user is not None:
                 login(request, user)
-        return render(request, "login.html", {"form": form, "msg": msg})
+                is_ok = True
+        else:
+            msg = "올바른 유저 ID와 패스워드를 입력하세요."
     else:
-        form = AuthenticationForm()  
-        return render(request, "login.html", {"form": form})
+        form = AuthenticationForm()
+    for visible in form.visible_fields():  # 수정된 부분
+        visible.field.widget.attrs["placeholder"] = "유저ID" if visible.name == "username" else "패스워드"
+        visible.field.widget.attrs["class"] = "form-control"
+    return render(request, "login.html", {"form": form, "msg": msg, "is_ok": is_ok})
 
-# 로그아웃
 def logout_view(request):
-    logout(request)  
+    logout(request)
     return redirect("index")
 
-# @login_required 로그인 부여 
 @login_required
 def list_view(request):
     page = int(request.GET.get("p", 1))
-    # -id => 내림차순 / id => 오름차순 
-    users = User.objects.all().order_by("-id")  
+    users = User.objects.all().order_by("-id")
     paginator = Paginator(users, 1)
     users = paginator.get_page(page)
     return render(request, "borders.html", {"users": users})
