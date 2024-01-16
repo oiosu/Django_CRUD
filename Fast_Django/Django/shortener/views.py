@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from .models import User
+from .forms import RegisterForm
+from django.contrib.auth import authenticate, login
+from django.shortcuts import render
 
 def index(request):
     user = User.objects.filter(id=request.user.id).first()
@@ -26,3 +29,22 @@ def get_user(request, user_id):
         if username:
             user = User.objects.filter(pk=user_id).update(username=username)
             return JsonResponse({"msg": "you just reached with post method!"})
+
+def register(request):
+    if request.method == "POST":
+        form = RegisterForm(request.POST)
+        msg = "올바르지 않은 데이터 입니다."
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_date.get("username")
+            raw_password = form.cleaned_date.get("password")
+            user = authenticate(username=username, password=raw_password)
+            login(request, user)
+            msg = "회원가입완료"
+        return render(request, "register.html", {"form": form, "msg": msg})
+    else:
+        form = RegisterForm()
+        return render(request, "register.html", {"form": form})
+    
+def server_error(request, *args, **kwargs):
+    return render(request, '500.html', status=500)

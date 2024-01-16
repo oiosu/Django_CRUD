@@ -1,6 +1,7 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
+
 class PayPlan(models.Model):
     name = models.CharField(max_length=20)
     price = models.IntegerField()
@@ -8,6 +9,7 @@ class PayPlan(models.Model):
     create_at = models.DateTimeField(auto_now_add=True)
 
 class User(AbstractUser):
+    full_name = models.CharField(max_length=100, null=True)
     pay_plan = models.ForeignKey(PayPlan, on_delete=models.DO_NOTHING, null=True, blank=True, related_name='users')
 
 class UserDetail(models.Model):
