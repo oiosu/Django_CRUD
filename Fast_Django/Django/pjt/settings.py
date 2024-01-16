@@ -49,9 +49,9 @@ INSTALLED_APPS = [
 
 # IP로 접속했을때만 django debug toolbar 가 작동하기
 # 주석처리하면 안보이게 됨 
-INTERNAL_IPS = [
-    "127.0.0.1",
-]
+# INTERNAL_IPS = [
+#     "127.0.0.1",
+# ]
 
 # login url
 LOGIN_URL = "/login"
