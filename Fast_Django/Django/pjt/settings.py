@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "debug_toolbar",
     "django_seed",
+    "bootstrap5",
 ]
 
 # IP로 접속했을때만 django debug toolbar 가 작동하기
@@ -51,6 +52,9 @@ INSTALLED_APPS = [
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
+
+# login url
+LOGIN_URL = "/login"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
