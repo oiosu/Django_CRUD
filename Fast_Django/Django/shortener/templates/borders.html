@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load custom_tags %}
+
 {% block content %}
     <h2>유저 리스트</h2>
     <h4>{%if msg%}{{msg}}{%endif%}</h4>
@@ -54,6 +55,8 @@
       <a href="{% url 'index' %}">홈으로</a>
       <a href="{% url 'register' %}">회원가입</a>
     </p>
+    
     {% test_tags %}
+
     {% include "include_test.html" %}
 {% endblock %}

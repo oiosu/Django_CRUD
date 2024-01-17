@@ -1,2 +1,0 @@
-### 10_Django Login
-

@@ -35,16 +35,16 @@ AUTH_USER_MODEL = 'shortener.User'
 
 
 INSTALLED_APPS = [
-    'shortener',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "debug_toolbar",
-    "django_seed",
-    "bootstrap5",
+    'debug_toolbar',
+    'django_seed',
+    'bootstrap5',
+    'shortener'
 ]
 
 # IP로 접속했을때만 django debug toolbar 가 작동하기

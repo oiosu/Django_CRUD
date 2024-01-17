@@ -4,6 +4,7 @@ from shortener.views import index, get_user, list_view, register, login_view, lo
 from django.contrib import admin
 from django.urls import path
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("__debug__/", include("debug_toolbar.urls")),
