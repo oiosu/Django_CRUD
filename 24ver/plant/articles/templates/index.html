@@ -1,0 +1,5 @@
+{% extends 'base.html' %} {% block content %}
+<h1>Article List</h1>
+{% for article in articles %}
+<p>{{ article.content }}</p>
+{% endfor %} {% endblock %}

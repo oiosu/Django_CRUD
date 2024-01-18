@@ -1,0 +1,25 @@
+{% load static %}
+
+<!-- CSS only -->
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="HS,SK" />
+    <title>🪴Plant</title>
+  </head>
+  <body>
+    <h1>HOME</h1>
+    <p><a href="{% url 'accounts:login' %}">로그인</a></p>
+    <p><a href="{% url 'accounts:signup' %}">회원가입</a></p>
+  </body>
+</html>
+
+<!-- JavaScript only -->
+<script></script>
+
+<!--  -->
+{% block content %} {% endblock %}
