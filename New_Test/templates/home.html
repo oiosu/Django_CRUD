@@ -1,27 +1,41 @@
 {% load static %}
 
-<!-- CSS only -->
-<link rel="stylesheet" href="{% static 'css/style.css' %}" />
-
 <!DOCTYPE html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Sukyung" />
+    <!-- CSS only -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <!-- src="{% static 'images/images/plant_logo.png' %}" -->
+
     <title>🪴Plant</title>
   </head>
   <body>
-    <h1>HOME</h1>
-
-    {% if user.is_authenticated %}
-    <p>환영합니다, {{ user.username }}님!</p>
-    <p><a href="{% url 'accounts:logout' %}">로그아웃</a></p>
-    <p><a href="{% url 'accounts:update' %}">마이페이지</a></p>
-    {% else %}
-    <p><a href="{% url 'accounts:login' %}">로그인</a></p>
-    <p><a href="{% url 'accounts:signup' %}">회원가입</a></p>
-    {% endif %}
+    <!-- Header -->
+    <header>
+      <div class="menu_section">
+        <div class="logo">PLANT</div>
+        <ul>
+          <li>Find your plant</li>
+          <li>Plantagram</li>
+          <li>Store</li>
+        </ul>
+      </div>
+      <!-- Nav -->
+      <div class="nav">
+        {% if user.is_authenticated %}
+        <p class="welcome_msg">Welcome! {{ user.username }}!</p>
+        <p><a href="{% url 'accounts:logout' %}">LOGOUT</a></p>
+        <p class="page1"><a href="{% url 'accounts:update' %}">MYPAGE</a></p>
+        {% else %}
+        <p></p>
+        <p><a href="{% url 'accounts:login' %}">LOGIN</a></p>
+        <p class="page2"><a href="{% url 'accounts:signup' %}">JOIN</a></p>
+        {% endif %}
+      </div>
+    </header>
   </body>
 </html>
 
