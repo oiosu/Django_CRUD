@@ -1,6 +1,6 @@
 {% extends 'home.html' %} {% block content %}
 <h2>Login</h2>
-<form method="post" action="{% url 'plant:login' %}">
+<form method="post" action="{% url 'accounts:login' %}">
   {% csrf_token %} {{ form.as_p }}
   <button type="submit">Login</button>
 </form>
