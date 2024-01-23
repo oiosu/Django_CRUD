@@ -1,0 +1,42 @@
+{% load static %}
+{% extends 'base.html' %}
+{% block content %}
+<!-- hello banner -->
+<div class="hello_banner">
+  <p class="hello_1">안녕하세요 :)</p>
+  <p class="hello_2">PLANT를 소개합니다!</p>
+</div>
+
+<!-- banner card -->
+<div class="banner_card">
+  <div class="user_plant">
+      <div class="user_plant_img">
+        <img src="{% static 'images/images/olive.png' %}" alt="">
+        <img src="{% static 'images/images/mons.png' %}" alt="">
+        <img src="{% static 'images/images/yellow.png' %}" alt="">
+      </div>
+      <div class="user_card">
+          <div class="user_content"></div>
+          <div class="user_content"></div>
+          <div class="user_content"></div>
+      </div>
+  </div>
+</div>
+
+<!-- together section -->
+<div class="video">
+  <img class="plant_video" src="{% static 'images/images/PLANT.gif' %}" alt="">
+</div>
+<div class="video_text">
+  <div class="video_content_1">
+    <p>누구나 식물과</p>
+    <p>함께,</p>
+  </div>
+  <div class="video_content_2">
+    <p>PLANT에서는 식물을 통해 그들만의 공간과 시간,</p>
+    <p>그리고 마음을 채울 수 있다고 생각합니다.</p>
+    <p>진정한 ‘나’를 위해 더 나은 라이프스타일을 고민하는 사람들이 있습니다.</p>
+    <p>식물은 우리가 머무는 장소와 행동을 더욱 의미 있게 만들어줄 뿐만 아니라 우리의</p>
+    <p>지친 마음과 생각을 치유하고 위로해주는 살아있는 오브제입니다.</p>
+  </div>
+</div
