@@ -19,11 +19,12 @@
     <header id="mainHeader">
       <div class="menu_section">
         <div class="logo"><a href={% url 'main' %}>PLANT</a></div>
-        <ul>
-          <li>반려식물 찾기</li>
-          <li>전국식물자랑</li>
-          <li>스토어</li>
-        </ul>
+        <div class="menu">
+          <p class="menu_list">반려식물 찾기</p>
+          <p class="menu_list"><a href="{% url 'articles:article_list' %}">전국식물자랑</a></p>
+          <p class="menu_list">스토어</p>
+        </div>
+
       </div>
 
       <!-- Nav -->
@@ -54,7 +55,7 @@
         <p>Contact</p>
         <div class="footer_text">
           <p>email : plant@email.com</p>
-          <p>tell : 070-0000-0000 (11:00 am - 18:00 / 토,일,공유일 휴무)</p>
+          <p>tell : 070-0000-0000 (11:00 am - 18:00 / 토,일,공휴일 휴무)</p>
           <p>@2024. PLANT corp. all rights reserevd. Django FullStack.</p>
         </div>
       </div>

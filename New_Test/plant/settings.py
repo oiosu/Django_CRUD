@@ -40,8 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'plant',
     'accounts',
-    "imagekit",
-
+    'articles',
 ]
 
 MIDDLEWARE = [
@@ -127,6 +126,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / "media"
 
 # static file들을 어디에 집합시킬 것인지 결정
 # 배포를 할때는 만들어둔 static 파일들을 총합해서 배포한다. 
