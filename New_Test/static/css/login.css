@@ -21,7 +21,7 @@
   margin-bottom: 20px;
 }
 
-p {
+.login_p {
   margin-bottom: 30px;
 }
 
@@ -33,9 +33,11 @@ input {
   padding-top: 20px;
   padding-left: 20px;
   padding-bottom: 20px;
+
+  margin-bottom: 30px;
 }
 
-button {
+.login_btn {
   margin-top: 30px;
   background-color: #1db565;
   color: #fff;
