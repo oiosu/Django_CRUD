@@ -55,8 +55,11 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1;
+  z-index: 1000;
+  transition: background 0.3s ease;
+  background: rgba(255, 255, 255, 0.8);
 }
+
 /* menu_section */
 .menu_section {
   display: flex;
@@ -90,6 +93,7 @@ ul {
   padding: 0;
   margin-left: 50px;
   margin-top: 23px;
+  cursor: pointer;
 }
 
 li {
@@ -98,6 +102,7 @@ li {
   border: 0;
   float: left;
   margin-right: 40px;
+  cursor: pointer;
 }
 
 /* nav */

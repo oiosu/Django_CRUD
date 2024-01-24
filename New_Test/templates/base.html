@@ -16,7 +16,7 @@
   </head>
   <body>
     <!-- Header -->
-    <header>
+    <header id="mainHeader">
       <div class="menu_section">
         <div class="logo"><a href={% url 'main' %}>PLANT</a></div>
         <ul>
@@ -67,4 +67,13 @@
 
 
 <!-- JavaScript only -->
-<script></script>
+<script>
+  window.addEventListener('scroll', function() {
+    var header = document.getElementById('mainHeader');
+    if (window.scrollY > 100) { 
+      header.style.background = 'rgba(255, 255, 255, 1)'; 
+    } else {
+      header.style.background = 'rgba(255, 255, 255, 0.8)'; 
+    }
+  });
+</script>
