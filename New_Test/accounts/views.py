@@ -30,7 +30,7 @@ def signup(request):
             user.backend = 'django.contrib.auth.backends.ModelBackend'  # 백엔드 지정
             user.save()
             auth_login(request, user)
-            return redirect("home")
+            return redirect("base")
     else:
         form = CustomUserCreationForm()
     context = {"form": form}
@@ -41,7 +41,7 @@ def login_view(request):
         form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():
             auth_login(request, form.get_user())
-            return redirect("home")
+            return redirect("base")
     else:
         form = AuthenticationForm()
     context = {"form": form}
@@ -50,7 +50,7 @@ def login_view(request):
 def logout_view(request):
     auth_logout(request)
     messages.warning(request, "로그아웃 성공!")
-    return redirect("home")
+    return redirect("base")
 
 @login_required
 def update(request):

@@ -6,24 +6,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Sukyung" />
-    <!-- CSS only -->
+    <!-- CSS Link -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-    <link rel="stylesheet" href="{% static  'css/login.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/login.css'%}" />
    
     <title>🪴Plant</title>
+
   </head>
   <body>
     <!-- Header -->
     <header>
       <div class="menu_section">
-        <div class="logo"><a href={% url 'base' %}>PLANT</a></div>
-        <nav>
-          <ul>
-            <li>Find your plant</li>
-            <li>Plantgram</li>
-            <li>Store</li>
-          </ul>
-        </nav>
+        <div class="logo"><a href={% url 'main' %}>PLANT</a></div>
+        <ul>
+          <li>Find your plant</li>
+          <li>Plantgram</li>
+          <li>Store</li>
+        </ul>
       </div>
 
       <!-- Nav -->
@@ -40,20 +39,28 @@
       </div>
     </header>
 
-    <div class="content_block">
-      {% block content %}{% endblock %}
-    </div>
+    {% block content %}
 
+    {% endblock content %} 
+
+    
     <!-- footer -->
-    <footer>
+    <div class="footer">
       <div class="footer_contact">
         <p>Contact</p>
         <div class="footer_text">
           <p>email : plant@email.com</p>
           <p>tell : 070-0000-0000 (11:00 am - 18:00 / 토,일,공유일 휴무)</p>
-          <p>@2024. PLANT corp. all rights reserved. Django FullStack.</p>
+          <p>@2024. PLANT corp. all rights reserevd. Django FullStack.</p>
         </div>
       </div>
-    </footer>
+    </div>
+
+
   </body>
 </html>
+
+
+
+<!-- JavaScript only -->
+<script></script>
