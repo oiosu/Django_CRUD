@@ -1,8 +1,8 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from .models import CustomUser
-# from .models import User
 
+# from .models import User
 
 class CustomUserCreationForm(UserCreationForm):
     class Meta:
@@ -17,12 +17,5 @@ class CustomUserChangeForm(UserChangeForm):
 
 # class ProfileForm(forms.ModelForm):
 #     class Meta:
-#         model = User
-#         fields = [
-#             "nickname",
-#             "profile_pic",
-#             "introduce",
-#         ]
-#         widget = {
-#             "introduce": forms.Textarea,
-#         }
+#         model = UserProfile  # UserProfile 모델로 변경
+#         fields = ['nickname', 'profile_pic', 'introduce']

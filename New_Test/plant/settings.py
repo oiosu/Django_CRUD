@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'plant',
-    'accounts'
+    'accounts',
+    "imagekit",
+
 ]
 
 MIDDLEWARE = [
