@@ -63,3 +63,4 @@ def update(request):
         form = CustomUserChangeForm(instance=request.user)
     context = {"form": form}
     return render(request, "accounts/update.html", context)
+

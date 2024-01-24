@@ -20,9 +20,9 @@
       <div class="menu_section">
         <div class="logo"><a href={% url 'main' %}>PLANT</a></div>
         <ul>
-          <li>Find your plant</li>
-          <li>Plantgram</li>
-          <li>Store</li>
+          <li>반려식물 찾기</li>
+          <li>전국식물자랑</li>
+          <li>스토어</li>
         </ul>
       </div>
 
@@ -30,12 +30,12 @@
       <div class="nav">
         {% if user.is_authenticated %}
         <p class="welcome_msg">Welcome! {{ user.username }}!</p>
-        <p><a href="{% url 'accounts:logout' %}">LOGOUT</a></p>
-        <p class="page1"><a href="{% url 'accounts:update' %}">MYPAGE</a></p>
+        <p><a href="{% url 'accounts:logout' %}">로그아웃</a></p>
+        <p class="page1"><a href="{% url 'accounts:update' %}">회원정보수정</a></p>
         {% else %}
         <p></p>
-        <p><a href="{% url 'accounts:login' %}">LOGIN</a></p>
-        <p class="page2"><a href="{% url 'accounts:signup' %}">JOIN</a></p>
+        <p><a href="{% url 'accounts:login' %}">로그인</a></p>
+        <p class="page2"><a href="{% url 'accounts:signup' %}">회원가입</a></p>
         {% endif %}
       </div>
     </header>
