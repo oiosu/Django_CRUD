@@ -35,6 +35,7 @@ input {
   padding-bottom: 20px;
 
   margin-bottom: 30px;
+  background-color: aliceblue;
 }
 
 .login_btn {
@@ -51,7 +52,7 @@ input {
   font-size: 20px;
 }
 
-button:hover {
+.login_btn:hover {
   background-color: rgb(235, 214, 59);
   color: #000;
 }

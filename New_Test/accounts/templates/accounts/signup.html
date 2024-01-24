@@ -1,7 +1,38 @@
 {% extends 'base.html' %} {% block content %}
-<h2>signup</h2>
-<form method="post" action="{% url 'accounts:signup' %}">
-  {% csrf_token %} {{ form.as_p }}
-  <button type="submit">Signup</button>
-</form>
+<div class="signup">
+  <div class="signup_content">
+    <div class="signup_text">
+      <p class="loginup_p">Sign Up</p>
+      <div class="signup_form">
+        <form method="post" action="{% url 'accounts:signup' %}">
+          {% csrf_token %}
+
+          <div class="form-field">
+            <label for="{{ form.username.id_for_label }}">Username:</label>
+            {{ form.username }}
+          </div>
+
+          <div class="form-field">
+            <label for="{{ form.email.id_for_label }}">Email:</label>
+            {{ form.email }}
+          </div>
+
+          <div class="form-field">
+            <label for="{{ form.password1.id_for_label }}">Password:</label>
+            {{ form.password1 }}
+          </div>
+
+          <div class="form-field">
+            <label for="{{ form.password2.id_for_label }}"
+              >Confirm Password:</label
+            >
+            {{ form.password2 }}
+          </div>
+
+          <button class="signup_btn" type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
