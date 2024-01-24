@@ -1,14 +1,16 @@
 {% extends 'base.html' %} {% block content %}
 
-<div class="login_content">
-  <div class="login_text">
-    <p>Login</p>
-  </div>
-  <div class="login_form">
-    <form method="post" action="{% url 'accounts:login' %}">
-      {% csrf_token %} {{ form.as_p }}
-      <button type="submit">Login</button>
-    </form>
+<div class="login">
+  <div class="login_content">
+    <div class="login_text">
+      <p>Login</p>
+    </div>
+    <div class="login_form">
+      <form method="post" action="{% url 'accounts:login' %}">
+        {% csrf_token %} {{ form.as_p }}
+        <button type="submit">Start Plant</button>
+      </form>
+    </div>
   </div>
 </div>
 
