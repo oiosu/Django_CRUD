@@ -195,6 +195,11 @@ header {
   margin-top: -80px;
   margin-left: 50px;
   margin-right: 25px;
+  z-index: 2;
+}
+.user_name {
+  margin-top: 15px;
+  margin-left: 20px;
 }
 
 /* togethers section */
