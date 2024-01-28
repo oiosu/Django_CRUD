@@ -1,7 +1,0 @@
-{% extends 'base.html' %} {% block content %}
-<h2>{{ article.title }}</h2>
-<img src="{{ article.thumbnail.url }}" alt="{{ article.title }}" width="200" />
-<p>{{ article.content }}</p>
-<a href="{% url 'article_edit' article.pk %}">Edit</a>
-<a href="{% url 'article_delete' article.pk %}">Delete</a>
-{% endblock %}

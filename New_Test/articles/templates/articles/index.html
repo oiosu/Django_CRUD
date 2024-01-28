@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% block content %}
+<div class="articles_main">
+  <h2>index articles</h2>
+
+  <div class="articles_content">
+    <div class="articles_card">
+      <div class="content_body">
+        <a href="{% url 'articles:detail'%}"> {{ article.title }}</a>
+        <p>{{ article.created_at }}</p>
+      </div>
+      <p>{{ article.content }}</p>
+    </div>
+  </div>
+
+  {% endblock %}
+</div>

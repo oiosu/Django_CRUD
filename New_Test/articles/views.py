@@ -1,37 +1,65 @@
-from django.shortcuts import render, get_object_or_404, redirect
-from .models import Article
-from .forms import ArticleForm
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
+from django.urls import reverse
+from articles.models import Article
+from articles.forms import ArticleForm 
 
-def article_list(request):
-    articles = Article.objects.all()
-    return render(request, 'articles/article_list.html', {'articles': articles})
+def index(request):
+    articles = Article.objects.order_by('-pk')
+    context = {
+        'articles': articles
+    }
+    return render(request, 'articles/index.html', context)
 
-def article_detail(request, pk):
-    article = get_object_or_404(Article, pk=pk)
-    return render(request, 'articles/article_detail.html', {'articles': article})
-
-def article_create(request):
+@login_required
+def create(request):
     if request.method == 'POST':
-        form = ArticleForm(request.POST, request.FILES)
-        if form.is_valid():
-            article = form.save()
-            return redirect('article_detail', pk=article.pk)
+        article_form = ArticleForm(request.POST)
+        if article_form.is_valid():
+            article = article_form.save(commit=False)
+            article.author = request.user
+            article.save()
+            return redirect('articles:index')
     else:
-        form = ArticleForm()
-    return render(request, 'articles/article_form.html', {'form': form})
+        article_form = ArticleForm()
+    
+    context = {
+        'article_form': article_form
+    }
+    return render(request, 'articles/forms.html', context)
 
-def article_edit(request, pk):
+def detail(request, pk):
     article = get_object_or_404(Article, pk=pk)
+    context = {
+        'article': article
+    }
+    return render(request, 'articles/detail.html', context)
+
+@login_required
+def update(request, pk):
+    article = get_object_or_404(Article, pk=pk, author=request.user)
+
     if request.method == 'POST':
-        form = ArticleForm(request.POST, request.FILES, instance=article)
-        if form.is_valid():
-            article = form.save()
-            return redirect('article_detail', pk=article.pk)
+        article_form = ArticleForm(request.POST, instance=article)
+        if article_form.is_valid():
+            article_form.save()
+            return redirect('articles:index')
     else:
-        form = ArticleForm(instance=article)
-    return render(request, 'articles/article_form.html', {'form': form})
+        article_form = ArticleForm(instance=article)
 
-def article_delete(request, pk):
-    article = get_object_or_404(Article, pk=pk)
-    article.delete()
-    return redirect('article_list')
+    context = {
+        'article_form': article_form
+    }
+    return render(request, 'articles/forms.html', context)
+
+def delete(request, pk):
+    article = get_object_or_404(Article, pk=pk, author=request.user)
+
+    if request.method == 'POST':
+        article.delete()
+        return redirect('articles:index')
+
+    context = {
+        'article': article
+    }
+    return render(request, 'articles/detail.html', context)
