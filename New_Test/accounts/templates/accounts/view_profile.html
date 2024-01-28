@@ -13,7 +13,7 @@
     <p>No profile picture available</p>
     {% endif %}
     <p class="user_name">{{ user.username }}'s Profile</p>
-    <p class="user_bio">🌱 {{ user.userprofile.bio }}</p>
+    <span class="user_bio">🌱 {{ user.userprofile.bio }}</span>
     <div class="edit_btn">
       <a href="{% url 'accounts:edit_profile' %}">Edit Profile</a>
     </div>
