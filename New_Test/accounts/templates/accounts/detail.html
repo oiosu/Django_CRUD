@@ -1,8 +1,0 @@
-{% extends 'base.html' %} {% block content %}
-
-<div class="card-body">
-  <h5 class="card-title">{{ user.username }}님의 프로필</h5>
-  {% if request.user == user %}
-  <a href="{% url 'accounts:update' user.pk %}">회원정보 수정</a>
-</div>
-{% endif %} {% endblock %}

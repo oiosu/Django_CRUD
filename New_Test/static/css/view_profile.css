@@ -1,0 +1,55 @@
+/* user_profile */
+.user_profile {
+  margin-top: 100px;
+  margin-bottom: 280px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  width: 100%;
+  background-color: #f1f4c4;
+}
+
+/* user_info */
+.user_info {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+}
+
+.user_info .user_name {
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.user_info .user_bio {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.user_profile_img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-style: solid;
+  border-color: rgb(189, 189, 189);
+  border-radius: 50%;
+}
+
+.edit_btn {
+  background-color: #fff;
+  border-color: #1db565;
+  width: 150px;
+  height: 40px;
+  text-align: center;
+  border-radius: 30px;
+  padding-top: 20px;
+  margin-right: 60px;
+}
+
+.edit_btn a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}

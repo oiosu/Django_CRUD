@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block content %} {% if user.is_authenticated %}
+<div class="user_profile">
+  <div class="user_info">
+    <!--user_img-->
+    {% if user.userprofile.profile_picture %}
+    <img
+      class="user_profile_img"
+      src="{{ user.userprofile.profile_picture.url }}"
+      alt="Profile Picture"
+    />
+
+    {% else %}
+    <p>No profile picture available</p>
+    {% endif %}
+    <p class="user_name">{{ user.username }}'s Profile</p>
+    <p class="user_bio">🌱 {{ user.userprofile.bio }}</p>
+    <div class="edit_btn">
+      <a href="{% url 'accounts:edit_profile' %}">Edit Profile</a>
+    </div>
+  </div>
+</div>
+{% endif %} {% endblock %}

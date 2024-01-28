@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{% static 'css/login.css'%}" />
     <link rel="stylesheet" href="{% static 'css/signup.css'%}" />
     <link rel="stylesheet" href="{% static 'css/articles_list.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/view_profile.css' %}" />
     <!-- Google Icon -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
    
@@ -35,7 +36,7 @@
         {% if user.is_authenticated %}
         <p class="welcome_msg">Welcome! {{ user.username }}!</p>
         <p><a href="{% url 'accounts:logout' %}">로그아웃</a></p>
-        <p class="page1"><a href="">마이페이지</a></p>
+        <p class="page1"><a href="{% url 'accounts:view_profile' %}">마이페이지</a></p>
         {% else %}
         <p></p>
         <p><a href="{% url 'accounts:login' %}">로그인</a></p>
@@ -66,18 +67,17 @@
 
 
   </body>
+  <!-- JavaScript only -->
+  <script>
+    window.addEventListener('scroll', function() {
+      var header = document.getElementById('mainHeader');
+      if (window.scrollY > 100) { 
+        header.style.background = 'rgba(255, 255, 255, 1)'; 
+      } else {
+        header.style.background = 'rgba(255, 255, 255, 0.8)'; 
+      }
+    });
+  </script>
 </html>
 
 
-
-<!-- JavaScript only -->
-<script>
-  window.addEventListener('scroll', function() {
-    var header = document.getElementById('mainHeader');
-    if (window.scrollY > 100) { 
-      header.style.background = 'rgba(255, 255, 255, 1)'; 
-    } else {
-      header.style.background = 'rgba(255, 255, 255, 0.8)'; 
-    }
-  });
-</script>

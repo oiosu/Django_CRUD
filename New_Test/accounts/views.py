@@ -3,6 +3,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.auth import get_user_model, login as auth_login, logout as auth_logout
 from .forms import CustomUserCreationForm, CustomUserChangeForm
+from .models import UserProfile
+from .forms import UserProfileForm
 from django.contrib.auth.forms import AuthenticationForm
 
 def detail(request, pk):
@@ -64,3 +66,25 @@ def update(request):
     context = {"form": form}
     return render(request, "accounts/update.html", context)
 
+# profile
+@login_required
+def view_profile(request):
+    try:
+        user_profile = UserProfile.objects.get(user=request.user)
+    except UserProfile.DoesNotExist:
+        user_profile = UserProfile.objects.create(user=request.user)
+    return render(request, 'accounts/view_profile.html', {'user_profile': user_profile})
+
+@login_required
+def edit_profile(request):
+    user_profile = UserProfile.objects.get(user=request.user)
+
+    if request.method == 'POST':
+        form = UserProfileForm(request.POST, request.FILES, instance=user_profile)
+        if form.is_valid():
+            form.save()
+            return redirect('accounts/view_profile.html')
+    else:
+        form = UserProfileForm(instance=user_profile)
+
+    return render(request, 'accounts/edit_profile.html', {'form': form})
