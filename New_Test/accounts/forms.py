@@ -17,7 +17,7 @@ class CustomUserChangeForm(UserChangeForm):
 class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
-        fields = ['bio']
+        fields = ['bio', 'profile_picture']
         
     def clean_profile_picture(self):
         profile_picture = self.cleaned_data.get('profile_picture')
