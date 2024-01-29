@@ -1,7 +1,6 @@
 /* user_profile */
 .user_profile {
   margin-top: 100px;
-  margin-bottom: 280px;
   padding-top: 30px;
   padding-bottom: 20px;
   width: 100%;
@@ -54,4 +53,5 @@
   text-decoration: none;
   color: black;
   font-weight: bold;
+  font-size: 10px;
 }
