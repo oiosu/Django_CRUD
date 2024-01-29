@@ -9,6 +9,7 @@
         method="post"
         action="{% url 'accounts:login' %}"
         class="login-form"
+        id="loginForm"
       >
         {% csrf_token %}
 
@@ -26,9 +27,12 @@
           {{ form.password }}
         </div>
 
-        <button class="login_btn" type="submit">Start Plant</button>
+        <button class="login_btn" type="button" onclick="submitForm()">
+          Start Plant
+        </button>
       </form>
     </div>
   </div>
 </div>
+
 {% endblock %}
